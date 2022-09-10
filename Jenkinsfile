@@ -2,18 +2,18 @@ pipeline {
     agent any
     stages {
         stage('Installing Dependencies') {
-            when {
-                branch 'main'
-            }
+            // when {
+            //     branch 'main'
+            // }
             steps {
                 sh "dependencies.sh"
             }
         }
         // Jenkins Stage to Build the Docker Image
         stage('Build Image') {
-            when {
-                branch 'main'
-            }
+            // when {
+            //     branch 'main'
+            // }
             steps {
             sh "sudo docker build -t shubhamborkar/myapp:v-1.0 ."
             }
@@ -21,9 +21,9 @@ pipeline {
 
         // Jenkins Stage to Publish the Docker Image.
         stage('Publish Image') {
-            when {
-                branch 'main'
-            }
+            // when {
+            //     branch 'main'
+            // }
             steps {
             sh '''
             sudo chmod 666 /var/run/docker.sock
