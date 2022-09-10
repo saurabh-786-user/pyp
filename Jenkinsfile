@@ -22,19 +22,8 @@ pipeline {
                 $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
                 sudo apt update -y
                 sudo apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
-                cat <<EOF | sudo tee /etc/docker/daemon.json
-                {
-                "exec-opts": ["native.cgroupdriver=systemd"],
-                "log-driver": "json-file",
-                "log-opts": {
-                    "max-size": "100m"
-                },
-                "storage-driver": "overlay2"
-                }
-                EOF
                 sudo systemctl enable docker
-                sudo systemctl daemon-reload
-                sudo systemctl restart docker
+                sudo systemctl start docker
                 '''
             }
         }
