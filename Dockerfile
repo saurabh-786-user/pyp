@@ -7,7 +7,7 @@ WORKDIR /my-dir
 ## Step 2:
 # Copy source code to working directory
 RUN mkdir model_data
-ADD model_data/ /my-dir/
+ADD model_data/ /my-dir/model_data
 COPY app.py /my-dir
 COPY make_prediction.sh /my-dir
 COPY Makefile /my-dir
