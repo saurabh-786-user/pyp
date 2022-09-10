@@ -24,5 +24,5 @@ EXPOSE 80
 
 ## Step 5:
 # Run app.py at container launch
-RUN ./run_docker.sh
+RUN sudo bash run_docker.sh
 
