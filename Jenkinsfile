@@ -1,4 +1,3 @@
-#!/usr/bin/env groovy
 pipeline {
     agent {
         node any
@@ -22,7 +21,7 @@ pipeline {
             sh "sudo docker build -t shubhamborkar/myapp:v-1.0 ."
             }
         }
-        
+
         // Jenkins Stage to Publish the Docker Image.
         stage('Publish Image') {
             when {
