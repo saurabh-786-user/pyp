@@ -7,7 +7,7 @@ pipeline {
             //     branch 'main'
             // }
             steps {
-            sh "sudo docker build -t shubhamborkar/myapp:v1.0 ."
+            sh "sudo docker build -t saurabhkaremore/myapp:v1.0 ."
             }
         }
 
@@ -19,8 +19,8 @@ pipeline {
             steps {
             sh '''
             sudo chmod 666 /var/run/docker.sock
-            cat password.txt | docker login --username shubhamborkar --password-stdin
-            sudo docker push shubhamborkar/myapp:v1.0
+            cat password.txt | docker login --username saurabhkaremore --password-stdin
+            sudo docker push saurabhkaremore/myapp:v1.0
             '''
             }
 
