@@ -27,4 +27,5 @@ EXPOSE 80
 # Run app.py at container launch
 RUN chmod +x run_docker.sh
 # CMD sh -c "run_docker.sh"
-RUN nohup run_docker.sh &>/dev/null &
+# RUN nohup run_docker.sh &>/dev/null &
+CMD ["python3", "run_docker.sh"]
